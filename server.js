@@ -14,7 +14,7 @@ app.use(express.json());
 // Strict CORS: Allow only frontend URL (plus local dev variations)
 const allowedOrigins = [
   FRONTEND_URL,
-  "https://xcm-devfolio.vercel.app/",
+  "https://xcm-devfolio.vercel.app",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
 ].filter(Boolean);
