@@ -14,6 +14,7 @@ app.use(express.json());
 // Strict CORS: Allow only frontend URL (plus local dev variations)
 const allowedOrigins = [
   FRONTEND_URL,
+  "https://xcm-devfolio.vercel.app/",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
 ].filter(Boolean);
@@ -63,7 +64,7 @@ app.post("/api/chat", chatRateLimiter, async (req, res) => {
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey || apiKey === "your_gemini_api_key_here") {
+    if (!apiKey || apiKey === "your_api_key_here") {
       return res.status(503).json({
         error: "Ai is not configured.",
       });
@@ -145,6 +146,7 @@ app.post("/api/chat", chatRateLimiter, async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`[xCM Backend] AI Chatbot Server running on port ${PORT}`);
-  console.log(`[xCM Backend] Allowed Frontend Origin: ${FRONTEND_URL}`);
+  // console.log(`[xCM Backend] AI Chatbot Server running on port ${PORT}`);
+  // console.log(`[xCM Backend] Allowed Frontend Origin: ${FRONTEND_URL}`);
+  console.log("server started.....");
 });
